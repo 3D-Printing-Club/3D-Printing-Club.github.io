@@ -1372,18 +1372,20 @@ a {
   text-align: center;
 }
 .cid-uCwDlUfOgY {
-  padding-top: 90px;
+  padding-top: 75px;
   padding-bottom: 90px;
-  background-color: #c9f4f6;
-  padding-top: 20px;
-  padding-bottom: 15px;
+  background-image: url("../../../assets/images/prusa-img.jpg");
+  padding-top: 60px;
+  padding-bottom: 45px;
   border: 2px solid black;
+  margin-bottom: 0px;
+  color: white;
 }
 .cid-uCwDlUfOgY img {
   width: auto;
 }
 .cid-uCwdf9puIk {
-  padding-top: 6rem;
+  padding-top: 2rem;
   padding-bottom: 6rem;
   background-color: #edefeb;
 }
@@ -1423,9 +1425,10 @@ a {
   margin: auto;
 }
 .cid-uCwdf9puIk input[type="radio"] {
-  margin-left: 10px;
-  margin-right: 5px;
-  transform: scale(1.5);
+  margin-left: 15px;
+  margin-right: 8px;
+  transform: scale(1.75);
+  cursor: pointer;
 }
 .cid-uCwdf9puIk .event-map {
   width: 50vw;
@@ -1434,13 +1437,24 @@ a {
   margin-bottom: 15px;
   border-radius: 10px;
 }
+.cid-uCwdf9puIk .alert {
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 100;
+}
 .cid-uCwdf9puIk .alert-success {
-  background-color: #35a535;
+  background-color: rgba(43, 122, 105, 0.9);
+}
+.cid-uCwdf9puIk .alert-danger {
+  background-color: rgba(143, 30, 26, 0.9);
 }
 .cid-tVYDLZ7uOQ {
   padding-top: 5rem;
   padding-bottom: 5rem;
   background-color: #13619d;
+  color: white;
 }
 .cid-tVYDLZ7uOQ .mbr-fallback-image.disabled {
   display: none;

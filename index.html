@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html  >
 <head>
-  <!-- Site made with Mobirise Website Builder v5.9.25, https://mobirise.com -->
+  
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v5.9.25, mobirise.com">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/favicon-1.ico" type="image/x-icon">
   <meta name="description" content="">
@@ -15,13 +15,14 @@
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/parallax/jarallax.css">
   <link rel="stylesheet" href="assets/animatecss/animate.css">
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=PQ55Aa"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=PQ55Aa" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=oLiYsC"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=oLiYsC" type="text/css">
 
   
   
@@ -79,11 +80,12 @@
 	</div>
 </section>
 
-<section class="mbr-section mbr-section--no-padding cid-uCwDlUfOgY" id="witsec-html-block-2k">
+<section class="mbr-section mbr-section--no-padding cid-uCwDlUfOgY mbr-parallax-background" id="witsec-html-block-2k">
 
 
 
-
+<div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(35, 35, 35);">
+</div>
 
 <!-- Place your own code below -->
 <div class="container">
@@ -118,8 +120,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 mx-auto mbr-form">
                 <form action="https://script.google.com/macros/s/AKfycbzuwoHBSkse1y1cV0uAsFvtey19fknP_1x7z6hejRCro2JFId5c3qrPNfbKfhCHAuJF/exec" method="POST" class="mbr-form form-with-styler" id="anniversary_form" data-verified="">
-                        <div hidden="hidden" class="alert alert-success col-12" id="successAlert">Thank you, your response was recorded!</div>
-                        <div hidden="hidden" class="alert alert-danger col-12" id="errorAlert">There was a problem with your submission!</div>
+                        
 
                     <div class="dragArea row">
                         <div class="col-md col-sm-12 form-group mb-3" data-for="first_name">
@@ -143,12 +144,87 @@
                           </div>
                         </div>
                         <div class="col-sm form-group mb-3" data-for="guests">
-                            <input name="num_guests" required="" placeholder="Total guests" data-form-field="num_guests" class="form-control" id="num_guests-form02-2j">
+                            <input name="notes" placeholder="Additional Notes" data-form-field="notes" class="form-control" id="notes-form02-2j">
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button class="btn btn-primary" type="submit">RSVP</button></div>
+                        <div>
+                          <div hidden="hidden" class="alert alert-success col-12" id="successAlert">Thank you, your response was recorded!</div>
+                          <div hidden="hidden" class="alert alert-danger col-12" id="errorAlert">There was a problem with your submission!</div>
+                        </div>
                     </div>
                 </form>
-                [JS_CODE_0]
+                <script>
+                  document.getElementById('anniversary_form').addEventListener('submit', function(e) {
+                  e.preventDefault(); // Prevent the default full-page submit
+                  
+                  // Hide both alerts at the beginning of submission
+                  let successAlert = document.getElementById('successAlert');
+                  let errorAlert = document.getElementById('errorAlert');
+                  successAlert.hidden = true;
+                  errorAlert.hidden = true;
+
+                  const formData = new FormData(this);
+
+                  fetch(this.action, {
+                    method: 'POST',
+                    body: formData
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    if (data.result === 'success') {
+                      successAlert.hidden = false;
+                      setTimeout(() => {
+                          successAlert.hidden = true;
+                          errorAlert.hidden = true;
+                      }, 5000)
+                      this.reset();
+                    } else {
+                      errorAlert.hidden = false;
+                      setTimeout(() => {
+                          errorAlert.hidden = true;
+                          successAlert.hidden = true;
+                      }, 5000)        
+                    }
+                  })
+                  .catch(error => {
+                    console.error('Error:', error);
+                    errorAlert.hidden = false;
+                        });
+                });
+
+                  // document.getElementById('anniversary_form').addEventListener('submit', function(e) {
+                  //   e.preventDefault(); // Prevent the default full-page submit
+                    
+                  //   // Hide both alerts at the beginning of submission
+                  //   const successAlert = document.querySelector('[data-form-alert]');
+                  //   const errorAlert = document.querySelector('[data-form-alert-danger]');
+                  //   successAlert.hidden = true;
+                  //   errorAlert.hidden = true;
+                  //   const formData = new FormData(this);
+
+                  //     fetch(this.action, {
+                  //       method: 'POST',
+                  //       body: formData
+                  //     })
+                  //     .then(response => response.json())
+                  //     .then(data => {
+                  //       if (data.result === 'success') {
+                  //         // Show the success alert
+                  //         successAlert.hidden = false;
+                  //         // Optionally reset the form
+                  //         this.reset();
+                  //       } else {
+                  //         // Show the error alert if the response indicates a problem
+                  //         errorAlert.hidden = false;
+                  //       }
+                  //     })
+                  //     .catch(error => {
+                  //       console.error('Error:', error);
+                  //       // Show the error alert if a network error or exception occurs
+                  //       errorAlert.hidden = false;
+                  //     });
+                  //   });
+                </script>
             </div>
         </div>
     </div>
@@ -191,7 +267,7 @@
             </div>
         </div>
     </div>
-</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3462506" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-maker.html">AI Website Maker</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</section><section><a href="https://mobiri.se"></a><a href="https://mobiri.se"></a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/parallax/jarallax.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">
