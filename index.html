@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=e8TFvb"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=e8TFvb" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=EDUjwr"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=EDUjwr" type="text/css">
 
   
   
@@ -114,6 +114,10 @@
 
         <div class="event-info">
           
+          <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-40 mt-0 pb-0 pt-0 display-7">
+              Time and Location: Friday, March 7 @ STEW 218
+          </h4>
+
           <iframe class="event-map col-sm-12" title="Anniversary Location" src="https://www.google.com/maps/embed/v1/place?q=Stewart+Center,+Memorial+Mall+Drive,+West+Lafayette,+IN,+USA&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
           </div>
 
@@ -138,8 +142,11 @@
                             Will you be attending?
                             </span>
                             <span>
-                            <label><input type="radio" name="attending" required="" value="Yes" id="attending-form02-2j">Yes</label>
-                            <label><input type="radio" name="attending" value="No" id="attending-form02-2j">No</label>
+                           <select class="attending-dropdown" name="attending" required="" id="attending-form02-2j">
+                                <option value="In-Person">In-Person</option>
+                                <option value="Virtually">Virtually</option>
+                                <option value="No">No</option>
+                            </select>
                             </span>
                           </div>
                         </div>
