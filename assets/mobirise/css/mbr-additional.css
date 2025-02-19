@@ -1475,7 +1475,6 @@ a {
   position: relative;
 }
 .cid-uCwdf9puIk .event-card {
-  width: 75%;
   min-width: 280px;
   background-color: white;
   margin: auto;
@@ -1501,7 +1500,14 @@ a {
 }
 .cid-uCwdf9puIk .events-wrapper {
   background-color: #f0faff;
-  padding: 10px;
+}
+@media (min-width: 600px) {
+  .cid-uCwdf9puIk .event-card {
+    width: 75%;
+  }
+  .cid-uCwdf9puIk .events-wrapper {
+    padding: 10px;
+  }
 }
 .cid-uCwdf9puIk .external-date {
   position: absolute;
