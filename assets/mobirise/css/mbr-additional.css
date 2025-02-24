@@ -1430,10 +1430,12 @@ a {
 }
 .cid-uCwdf9puIk .event-figure {
   width: 75%;
-  min-width: 220px;
   margin: auto;
   margin-bottom: 15px;
   border-radius: 10px;
+}
+.cid-uCwdf9puIk .event-figure.small {
+  width: 50%;
 }
 .cid-uCwdf9puIk .event-map-wrapper {
   margin-bottom: 10px;
@@ -1507,6 +1509,11 @@ a {
   }
   .cid-uCwdf9puIk .events-wrapper {
     padding: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .cid-uCwdf9puIk .event-figure {
+    width: 95% !important;
   }
 }
 .cid-uCwdf9puIk .external-date {
