@@ -1515,6 +1515,9 @@ a {
   .cid-uCwdf9puIk .event-figure {
     width: 95% !important;
   }
+  .cid-uCwdf9puIk .events-wrapper {
+    padding: 5px;
+  }
 }
 .cid-uCwdf9puIk .external-date {
   position: absolute;
@@ -1522,6 +1525,9 @@ a {
   font-weight: bolder;
   font-size: xx-large;
   color: #13619d;
+}
+.cid-uCwdf9puIk section {
+  scroll-margin-top: 180px;
 }
 .cid-tVYDLZ7uOQ {
   padding-top: 5rem;
