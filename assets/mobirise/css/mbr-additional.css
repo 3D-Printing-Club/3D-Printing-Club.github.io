@@ -1461,7 +1461,7 @@ a {
   width: 40px;
   height: 40px;
   position: absolute;
-  right: -40px;
+  right: -50px;
   top: 50%;
   transform: translateY(-50%);
 }
