@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=EwXjqd"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=EwXjqd" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=wbhOE6"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=wbhOE6" type="text/css">
 
   
   
@@ -56,7 +56,7 @@
 					</li><li class="nav-item"><a class="nav-link link text-danger text-primary display-4" href="about.html">About</a></li><li class="nav-item"><a class="nav-link link text-danger text-primary display-4" href="support.html">How to Print<br></a></li>
 					<li class="nav-item">
 						<a class="nav-link link text-danger text-primary display-4" href="schedule.html" aria-expanded="false">Schedule</a>
-					</li><li class="nav-item"><a class="nav-link link text-danger text-primary display-4" href="gallery.html">Gallery</a></li><li class="nav-item"><a class="nav-link link text-danger text-primary display-4" href="projects.html">Projects</a></li></ul>
+					</li><li class="nav-item"><a class="nav-link link text-danger text-primary display-4" href="gallery.html">Gallery</a></li></ul>
 				
 				
 			</div>
@@ -74,151 +74,316 @@
         <div class="row justify-content-center">
             <div class="col-12 content-head">
                 <div class="mb-5">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center m-0 display-2"><strong><br></strong><br><strong>3DPC Projects</strong></h3>
+                    <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7">Dynamically rendered from our discord projects channel!</h4>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mbr-gallery" id="gallery-wrapper">
+            <div hidden="hidden" id="idGalleryServer" galleryid="uEjdiQ3XBe"></div>
+        </div>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js'
+      import { getFirestore, doc, updateDoc, getDoc, onSnapshot,  collection } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js'
+      import { getAuth, signInAnonymously } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCbFmuNBKIXW091uHm--uRxVSETb6Z0470",
+        authDomain: "dpc-bot.firebaseapp.com",
+        projectId: "dpc-bot",
+        storageBucket: "dpc-bot.firebasestorage.app",
+        messagingSenderId: "846436118402",
+        appId: "1:846436118402:web:faad5d1e4ee3789f00299b"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      const db = getFirestore(app);
+      const auth = getAuth(app);
+
+      signInAnonymously(auth)
+        .then((userCredential) => {
+          console.log('User signed in:', userCredential.user);
+
+          // Create a reference to the "gallery" collection
+        const galleryCollection = collection(db, 'gallery');
+
+        // Listen for live updates from the collection
+        onSnapshot(galleryCollection, (querySnapshot) => {
+          querySnapshot.docChanges().forEach((change) => {
+            if (change.type === 'added') {
+              let data = change.doc.data()
+              console.log('Document added:', data);
+
+              const galleryImages = document.querySelectorAll('.gallery-image')
+              console.log('got gallery images: ', galleryImages)
+
+              //dynamically render the new element
+              createGalleryCard(4, data, galleryImages.length)
+
+            }
+            if (change.type === 'removed') {
+              console.log('Document removed:', change.doc.data());
+
+            }
+          });
+        });
+
+        })
+        .catch((error) => {
+          console.error('Error signing in:', error.message);
+        });
+
+        
+
+              
+        const truncateString = (str, maxLen) => {
+          if (str === null || str === undefined) return ('')
+          if (str.length > maxLen - 3) {
+            return str.substring(0, maxLen - 3) + '...';
+          }
+          return str;
+        }
+
+
+
+        function createGalleryCard(cardsWidth, data, index, altText="Discord Project Image", captionLen=200) {
+          // pull the idGallery from the idGalleryServer div
+          const idGalleryServer = document.getElementById('idGalleryServer');
+          let idGallery = idGalleryServer.getAttribute('galleryid');
+          console.log('got idGallery: ', idGallery)
+
+          // Create the main container div with the required classes
+          const mainDiv = document.createElement("div");
+          mainDiv.classList.add("col-12", "col-md-6", "item", "gallery-image");
+          mainDiv.classList.add("col-lg-" + cardsWidth);
+
+          // Create the inner wrapper div with modal attributes
+          const itemWrapper = document.createElement("div");
+          itemWrapper.classList.add("item-wrapper", "mb-3");
+          itemWrapper.setAttribute("data-toggle", "modal");
+          itemWrapper.setAttribute("data-bs-toggle", "modal");
+          itemWrapper.setAttribute("data-target", `#${idGallery}-modal`);
+          itemWrapper.setAttribute("data-bs-target", `#${idGallery}-modal`);
+
+          // Create the image element
+          const imgElement = document.createElement("img");
+          imgElement.classList.add("w-100");
+          // Set the source path (update as necessary)
+          imgElement.src = data.links[0];
+          imgElement.alt = altText;
+          imgElement.setAttribute("data-target", `#lb-${idGallery}`);
+          imgElement.setAttribute("data-bs-target", `#lb-${idGallery}`);
+          imgElement.setAttribute("data-slide-to", `${index}`);
+          imgElement.setAttribute("data-bs-slide-to", `${index}`);
+
+          // Create the icon wrapper div
+          const iconWrapper = document.createElement("div");
+          iconWrapper.classList.add("icon-wrapper");
+
+          // Create the icon span inside the icon wrapper
+          const iconSpan = document.createElement("span");
+          iconSpan.classList.add("mobi-mbri", "mobi-mbri-search", "mbr-iconfont", "mbr-iconfont-btn");
+
+          // Append the icon span to the icon wrapper
+          iconWrapper.appendChild(iconSpan);
+
+          // Append the image and the icon wrapper to the inner wrapper div
+          itemWrapper.appendChild(imgElement);
+          itemWrapper.appendChild(iconWrapper);
+
+          // Create the caption element (h6)
+          const h6Element = document.createElement("h6");
+          h6Element.classList.add("mbr-item-subtitle", "mbr-fonts-style", "align-center", "mb-0", "mt-3");
+          h6Element.setAttribute("mbr-theme-style", "display-7");
+
+          // Create the text node for the caption
+          const captionText = document.createTextNode(truncateString(data.text, captionLen));
+
+          // Append the text and the anchor to the caption element
+          h6Element.appendChild(captionText);
+
+          // Append the inner wrapper and caption to the main container div
+          mainDiv.appendChild(itemWrapper);
+          mainDiv.appendChild(h6Element);
+
+          // Lastly, append the entire structure to the parent element with id 'gallery-wrapper'
+          document.getElementById("gallery-wrapper").appendChild(mainDiv);
+
+
+
+
+          // Now create the carousel image and indicator
+          const carouselInner = document.getElementById('carousel-inner');
+          const carouselIndicators = document.getElementById('carousel-indicators');
+          
+          // Create carousel item container
+          const carouselItem = document.createElement('div');
+          carouselItem.classList.add('carousel-item');
+          
+          // Mark the first item as active
+          if (index === 0) {
+            carouselItem.classList.add('active');
+          }
+
+          // Create the carousel image
+          const carouselImg = document.createElement('img');
+          carouselImg.classList.add('d-block', 'w-100');
+          carouselImg.src = data.links[0];
+          carouselImg.alt = altText;
+          
+          carouselItem.appendChild(carouselImg);
+          carouselInner.appendChild(carouselItem);
+          
+
+          // Create carousel indicator element
+          const indicatorItem = document.createElement('li');
+          indicatorItem.setAttribute('data-target', `#lb-${idGallery}`);
+          indicatorItem.setAttribute('data-bs-target', `#lb-${idGallery}`);
+          // Set the slide number to the current index
+          indicatorItem.setAttribute('data-slide-to', index.toString());
+          indicatorItem.setAttribute('data-bs-slide-to', index.toString());
+          
+          // Optionally, mark the first indicator as active
+          if (index === 0) {
+            indicatorItem.classList.add('active');
+          }
+          
+          // Append the indicator to the carousel indicators container
+          carouselIndicators.appendChild(indicatorItem);
+        }
+    </script>
+    
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mb-5">
                     <h3 class="mbr-section-title mbr-fonts-style align-center m-0 display-2"><strong><br></strong><br><strong>3DPC Gallery</strong></h3>
-                    <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7"></h4>
+                    <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7">Static images of our lab space and sample prints!</h4>
                 </div>
             </div>
         </div>
         
         <div class="row mbr-gallery">
             <div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEj7p75XZU-modal" data-bs-target="#uEj7p75XZU-modal">
-                    <img class="w-100" src="assets/images/2eb8368d-c182-482f-85f9-823e81499f17.jpeg" alt="Mobirise Website Builder" data-slide-to="0" data-bs-slide-to="0" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEjdiQ3XBe-modal" data-bs-target="#uEjdiQ3XBe-modal">
+                    <img class="w-100" src="assets/images/2eb8368d-c182-482f-85f9-823e81499f17.jpeg" alt="Mobirise Website Builder" data-slide-to="0" data-bs-slide-to="0" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe">
                     <div class="icon-wrapper">
                         <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
                     </div>
                 </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
-                    Image Caption and <a href="#" class="text-primary">Link</a>
-                </h6>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEj7p75XZU-modal" data-bs-target="#uEj7p75XZU-modal">
-                    <img class="w-100" src="assets/images/16bddecc-fbde-4089-bba1-922e7efb3e61.jpeg" alt="Mobirise Website Builder" data-slide-to="1" data-bs-slide-to="1" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
-                    Image Caption and <a href="#" class="text-primary">Link</a>
-                </h6>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEj7p75XZU-modal" data-bs-target="#uEj7p75XZU-modal">
-                    <img class="w-100" src="assets/images/eba49d01-23aa-4649-8358-0d3ec7c23a4a.jpeg" alt="Mobirise Website Builder" data-slide-to="2" data-bs-slide-to="2" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
-                    Image Caption and <a href="#" class="text-primary">Link</a>
-                </h6>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEj7p75XZU-modal" data-bs-target="#uEj7p75XZU-modal">
-                    <img class="w-100" src="assets/images/f0d0d610-bcac-470e-9bcf-87b39d57616e.jpeg" alt="Mobirise Website Builder" data-slide-to="3" data-bs-slide-to="3" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
-                    Image Caption and <a href="#" class="text-primary">Link</a>
-                </h6>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEj7p75XZU-modal" data-bs-target="#uEj7p75XZU-modal">
-                    <img class="w-100" src="assets/images/28f18128-882c-4ee1-a619-898aafe5a743.jpeg" alt="Mobirise Website Builder" data-slide-to="4" data-bs-slide-to="4" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
-                    Image Caption and <a href="#" class="text-primary">Link</a>
-                </h6>
                 
             </div>
             <div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEj7p75XZU-modal" data-bs-target="#uEj7p75XZU-modal">
-                    <img class="w-100" src="assets/images/6ac96ef4-c516-432c-95fa-97559bf72135.jpeg" alt="Mobirise Website Builder" data-slide-to="5" data-bs-slide-to="5" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEjdiQ3XBe-modal" data-bs-target="#uEjdiQ3XBe-modal">
+                    <img class="w-100" src="assets/images/16bddecc-fbde-4089-bba1-922e7efb3e61.jpeg" alt="Mobirise Website Builder" data-slide-to="1" data-bs-slide-to="1" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe">
                     <div class="icon-wrapper">
                         <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
                     </div>
                 </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
-                    Image Caption and <a href="#" class="text-primary">Link</a>
-                </h6>
+                
             </div>
             <div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEj7p75XZU-modal" data-bs-target="#uEj7p75XZU-modal">
-                    <img class="w-100" src="assets/images/81773d9c-e630-40c2-af41-7f113c8a241b.jpeg" alt="Mobirise Website Builder" data-slide-to="6" data-bs-slide-to="6" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEjdiQ3XBe-modal" data-bs-target="#uEjdiQ3XBe-modal">
+                    <img class="w-100" src="assets/images/eba49d01-23aa-4649-8358-0d3ec7c23a4a.jpeg" alt="Mobirise Website Builder" data-slide-to="2" data-bs-slide-to="2" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe">
                     <div class="icon-wrapper">
                         <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
                     </div>
                 </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
-                    Image Caption and <a href="#" class="text-primary">Link</a>
-                </h6>
+                
             </div>
             <div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEj7p75XZU-modal" data-bs-target="#uEj7p75XZU-modal">
-                    <img class="w-100" src="assets/images/99655de1-6fc4-4278-882e-92aacf587db5.jpeg" alt="Mobirise Website Builder" data-slide-to="7" data-bs-slide-to="7" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEjdiQ3XBe-modal" data-bs-target="#uEjdiQ3XBe-modal">
+                    <img class="w-100" src="assets/images/f0d0d610-bcac-470e-9bcf-87b39d57616e.jpeg" alt="Mobirise Website Builder" data-slide-to="3" data-bs-slide-to="3" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe">
                     <div class="icon-wrapper">
                         <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
                     </div>
                 </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
-                    Image Caption and <a href="#" class="text-primary">Link</a>
-                </h6>
+                
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEjdiQ3XBe-modal" data-bs-target="#uEjdiQ3XBe-modal">
+                    <img class="w-100" src="assets/images/28f18128-882c-4ee1-a619-898aafe5a743.jpeg" alt="Mobirise Website Builder" data-slide-to="4" data-bs-slide-to="4" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEjdiQ3XBe-modal" data-bs-target="#uEjdiQ3XBe-modal">
+                    <img class="w-100" src="assets/images/6ac96ef4-c516-432c-95fa-97559bf72135.jpeg" alt="Mobirise Website Builder" data-slide-to="5" data-bs-slide-to="5" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEjdiQ3XBe-modal" data-bs-target="#uEjdiQ3XBe-modal">
+                    <img class="w-100" src="assets/images/81773d9c-e630-40c2-af41-7f113c8a241b.jpeg" alt="Mobirise Website Builder" data-slide-to="6" data-bs-slide-to="6" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEjdiQ3XBe-modal" data-bs-target="#uEjdiQ3XBe-modal">
+                    <img class="w-100" src="assets/images/99655de1-6fc4-4278-882e-92aacf587db5.jpeg" alt="Mobirise Website Builder" data-slide-to="7" data-bs-slide-to="7" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                
             </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEj7p75XZU-modal" data-bs-target="#uEj7p75XZU-modal">
-                    <img class="w-100" src="assets/images/8d133be5-b822-42e5-82b9-5101f409a8ac.jpeg" alt="Mobirise Website Builder" data-slide-to="8" data-bs-slide-to="8" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEjdiQ3XBe-modal" data-bs-target="#uEjdiQ3XBe-modal">
+                    <img class="w-100" src="assets/images/8d133be5-b822-42e5-82b9-5101f409a8ac.jpeg" alt="Mobirise Website Builder" data-slide-to="8" data-bs-slide-to="8" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe">
                     <div class="icon-wrapper">
                         <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
                     </div>
                 </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
-                    Image Caption and <a href="#" class="text-primary">Link</a>
-                </h6>
+                
             </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEj7p75XZU-modal" data-bs-target="#uEj7p75XZU-modal">
-                    <img class="w-100" src="assets/images/261f8886-b86e-4f97-946e-e0c29614b21b.jpeg" alt="Mobirise Website Builder" data-slide-to="9" data-bs-slide-to="9" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEjdiQ3XBe-modal" data-bs-target="#uEjdiQ3XBe-modal">
+                    <img class="w-100" src="assets/images/261f8886-b86e-4f97-946e-e0c29614b21b.jpeg" alt="Mobirise Website Builder" data-slide-to="9" data-bs-slide-to="9" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe">
                     <div class="icon-wrapper">
                         <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
                     </div>
                 </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
-                    Image Caption and <a href="#" class="text-primary">Link</a>
-                </h6>
+                
             </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEj7p75XZU-modal" data-bs-target="#uEj7p75XZU-modal">
-                    <img class="w-100" src="assets/images/b0f8e5b0-3fa7-4f9f-bb71-2370781c3b12.jpeg" alt="Mobirise Website Builder" data-slide-to="10" data-bs-slide-to="10" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEjdiQ3XBe-modal" data-bs-target="#uEjdiQ3XBe-modal">
+                    <img class="w-100" src="assets/images/b0f8e5b0-3fa7-4f9f-bb71-2370781c3b12.jpeg" alt="Mobirise Website Builder" data-slide-to="10" data-bs-slide-to="10" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe">
                     <div class="icon-wrapper">
                         <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
                     </div>
                 </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
-                    Image Caption and <a href="#" class="text-primary">Link</a>
-                </h6>
+                
             </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEj7p75XZU-modal" data-bs-target="#uEj7p75XZU-modal">
-                    <img class="w-100" src="assets/images/6bc288c9-702c-4c42-91ca-67eb7de42272.jpeg" alt="Mobirise Website Builder" data-slide-to="11" data-bs-slide-to="11" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uEjdiQ3XBe-modal" data-bs-target="#uEjdiQ3XBe-modal">
+                    <img class="w-100" src="assets/images/6bc288c9-702c-4c42-91ca-67eb7de42272.jpeg" alt="Mobirise Website Builder" data-slide-to="11" data-bs-slide-to="11" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe">
                     <div class="icon-wrapper">
                         <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
                     </div>
                 </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
-                    Image Caption and <a href="#" class="text-primary">Link</a>
-                </h6>
+                
             </div>
         </div>
 
-        <div class="modal mbr-slider" tabindex="-1" role="dialog" aria-hidden="true" id="uEj7p75XZU-modal">
+        <div class="modal mbr-slider" tabindex="-1" role="dialog" aria-hidden="true" id="uEjdiQ3XBe-modal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <div class="carousel slide" data-pause="false" data-bs-pause="false" id="lb-uEj7p75XZU" data-interval="5000" data-bs-interval="5000">
-                            <div class="carousel-inner">
+                        <div class="carousel slide" data-pause="false" data-bs-pause="false" id="lb-uEjdiQ3XBe" data-interval="5000" data-bs-interval="5000">
+                            <div class="carousel-inner" id="carousel-inner">
                                 <div class="carousel-item active">
                                     <img class="d-block w-100" src="assets/images/2eb8368d-c182-482f-85f9-823e81499f17.jpeg" alt="Mobirise Website Builder">
                                 </div>
@@ -252,23 +417,23 @@
                                     <img class="d-block w-100" src="assets/images/6bc288c9-702c-4c42-91ca-67eb7de42272.jpeg" alt="Mobirise Website Builder">
                                 </div>
                             </div>
-                            <ol class="carousel-indicators">
-                                <li data-slide-to="0" data-bs-slide-to="0" class="active" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU"></li>
-                                <li data-slide-to="1" data-bs-slide-to="1" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU"></li>
-                                <li data-slide-to="2" data-bs-slide-to="2" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU"></li>
-                                <li data-slide-to="3" data-bs-slide-to="3" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU"></li>
-                                <li data-slide-to="4" data-bs-slide-to="4" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU"></li>
-                                <li data-slide-to="5" data-bs-slide-to="5" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU"></li>
-                                <li data-slide-to="6" data-bs-slide-to="6" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU"></li>
-                                <li data-slide-to="7" data-bs-slide-to="7" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU"></li><li data-slide-to="8" data-bs-slide-to="8" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU"></li><li data-slide-to="9" data-bs-slide-to="9" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU"></li><li data-slide-to="10" data-bs-slide-to="10" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU"></li><li data-slide-to="11" data-bs-slide-to="11" data-target="#lb-uEj7p75XZU" data-bs-target="#lb-uEj7p75XZU"></li>
+                            <ol class="carousel-indicators" id="carousel-indicators">
+                                <li data-slide-to="0" data-bs-slide-to="0" class="active" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe"></li>
+                                <li data-slide-to="1" data-bs-slide-to="1" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe"></li>
+                                <li data-slide-to="2" data-bs-slide-to="2" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe"></li>
+                                <li data-slide-to="3" data-bs-slide-to="3" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe"></li>
+                                <li data-slide-to="4" data-bs-slide-to="4" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe"></li>
+                                <li data-slide-to="5" data-bs-slide-to="5" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe"></li>
+                                <li data-slide-to="6" data-bs-slide-to="6" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe"></li>
+                                <li data-slide-to="7" data-bs-slide-to="7" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe"></li><li data-slide-to="8" data-bs-slide-to="8" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe"></li><li data-slide-to="9" data-bs-slide-to="9" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe"></li><li data-slide-to="10" data-bs-slide-to="10" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe"></li><li data-slide-to="11" data-bs-slide-to="11" data-target="#lb-uEjdiQ3XBe" data-bs-target="#lb-uEjdiQ3XBe"></li>
                             </ol>
                             <a role="button" href="" class="close" data-dismiss="modal" data-bs-dismiss="modal" aria-label="Close">
                             </a>
-                            <a class="carousel-control-prev carousel-control" role="button" data-slide="prev" data-bs-slide="prev" href="#lb-uEj7p75XZU">
+                            <a class="carousel-control-prev carousel-control" role="button" data-slide="prev" data-bs-slide="prev" href="#lb-uEjdiQ3XBe">
                                 <span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>
                                 <span class="sr-only visually-hidden">Previous</span>
                             </a>
-                            <a class="carousel-control-next carousel-control" role="button" data-slide="next" data-bs-slide="next" href="#lb-uEj7p75XZU">
+                            <a class="carousel-control-next carousel-control" role="button" data-slide="next" data-bs-slide="next" href="#lb-uEjdiQ3XBe">
                                 <span class="mobi-mbri mobi-mbri-arrow-next" aria-hidden="true"></span>
                                 <span class="sr-only visually-hidden">Next</span>
                             </a>
