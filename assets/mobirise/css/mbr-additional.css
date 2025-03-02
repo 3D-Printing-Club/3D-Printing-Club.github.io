@@ -2826,6 +2826,7 @@ a {
 .cid-u3fa0La33o .item-wrapper {
   height: 100%;
   position: relative;
+  height: fit-content !important;
 }
 .cid-u3fa0La33o .item-wrapper img {
   height: 100%;
@@ -3070,6 +3071,9 @@ a {
 }
 .cid-u3fa0La33o .content-head {
   max-width: 800px;
+}
+.cid-u3fa0La33o .project-img {
+  max-height: 325px;
 }
 .cid-u1RQvXRB6C {
   padding-top: 5rem;
