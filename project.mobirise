@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "3DPC Website",
-    "currentPage": "index.html",
+    "currentPage": "about.html",
     "theme": {
       "name": "startm5",
       "title": "StartM5",
@@ -50,12 +50,12 @@
         "url": "https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
       }
     ],
-    "uniqCompNum": 100,
+    "uniqCompNum": 104,
     "versionPublish": "5.9.25",
     "imageResize": false,
     "chatbutton": {},
     "favicon": "@PROJECT_PATH@/assets/images/3dpc-circle-gradient.png",
-    "mbrsiteDomain": "qojg0egc8d",
+    "mbrsiteDomain": "8im6wgph9p",
     "usedWebp": false,
     "cssOptimize": false,
     "lazyLoad": false,
@@ -917,7 +917,7 @@
           },
           "_name": "witsec-html-block",
           "_sourceTheme": "startm5",
-          "_customHTML": "<section class=\"mbr-section mbr-section--no-padding\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen, 'mbr-parallax-background': bg.parallax}\">\n\n<mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n    <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/prusa-img.jpg\" selected parallax>\n    <input type=\"color\" title=\"Background Color\" value=\"#c9f4f6\">\n    <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n</mbr-parameters>\n\n<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n</div>\n\n<!-- Place your own code below -->\n<div class=\"container\">\n  <h3 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-3\"><b>Upcoming Events</b></h3>\n</div>\n<!-- Place your own code above -->\n\n</section>",
+          "_customHTML": "<section class=\"mbr-section mbr-section--no-padding\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen, 'mbr-parallax-background': bg.parallax}\">\n\n<mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n    <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/anniversary.jpg\" selected parallax>\n    <input type=\"color\" title=\"Background Color\" value=\"#c9f4f6\">\n    <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n</mbr-parameters>\n\n<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n</div>\n\n<!-- Place your own code below -->\n<div class=\"container\">\n  <h3 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-3\"><b>Upcoming Events</b></h3>\n</div>\n<!-- Place your own code above -->\n\n</section>",
           "_cid": "uCwDlUfOgY",
           "_anchor": "witsec-html-block-2k",
           "_PHPplaceholders": [],
@@ -1085,7 +1085,7 @@
           },
           "_name": "form02",
           "_sourceTheme": "startm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"form5 \" group=\"Forms\" plugins=\"formstyler, datepicker\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n        <header>Background</header>\n        <fieldset type=\"background\" parallax name=\"bg\">\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n   \n    </mbr-parameters>\n\n\n\n\n    <div class=\"events-wrapper\">\n    <!--  ########   Event Cards   ######## -->\n      <h3>No upcoming events! Please check again later.</h3>\n\n        <!-- 10th Anniversary -->\n        <!--\n        <section id='anniversary'></section>\n        <div class=\"row justify-content-center event-card\">\n            <div class=\"external-date\">3/7/2025</div>\n\n              <h3 class=\"event-header\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n                <b>3DPC 10th Anniversary</b>\n              </h3>\n              <h4 class=\"event-subtitle\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n                  Join us for the 10th anniversary of the Purdue 3D Printing Club!  \n                  <br/><br/>\n                  <b>Time and Location:</b> Friday, March 7, 7:00 PM - 9:00 PM @ STEW 310\n              </h4>\n\n          <div class=\"event-map-wrapper\">\n             <iframe class=\"event-figure col-sm-12\" title=\"Event Location\" src=\"https://www.google.com/maps/embed/v1/place?q=Stewart+Center,+Memorial+Mall+Drive,+West+Lafayette,+IN,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8\"></iframe>\n          </div>\n            <div class=\"row justify-content-center\">\n                <form action=\"https://script.google.com/macros/s/AKfycbzuwoHBSkse1y1cV0uAsFvtey19fknP_1x7z6hejRCro2JFId5c3qrPNfbKfhCHAuJF/exec\" name=\"Form Name\" method=\"POST\" class=\"mbr-form form-with-styler\" id=\"anniversary_form\">\n                        \n                    <div class=\"dragArea row\">\n                        <div class=\"col-md col-sm-12 form-group mb-3\" data-for=\"first_name\">\n                            <input type=\"text\" required name=\"first_name\" placeholder=\"First Name\" data-form-field=\"first_name\" class=\"form-control\" value>\n                        </div>\n                        <div class=\"col-md col-sm-12 form-group mb-3\" data-for=\"last_name\">\n                            <input type=\"text\" required name=\"last_name\" placeholder=\"Last Name\" data-form-field=\"last_name\" class=\"form-control\" value>\n                        </div>\n                        <div class=\"col-12 form-group mb-3\" data-for=\"email\">\n                            <input type=\"email\" required name=\"email\" placeholder=\"Email\" data-form-field=\"email\" class=\"form-control\" value>\n                        </div>\n                        <div class=\"col-md form-group mb-3 attending-wrapper form-control\" data-for=\"guests\">\n                          <div class=\"attending\">\n                            <span>Will you be attending?</span>\n                            <span>\n                              <select class=\"attending-dropdown\" name=\"attending\" required>\n                                <option value=\"In-Person\">In-Person</option>\n                                <option value=\"Virtually\">Virtually</option>\n                                <option value=\"No\">No</option>\n                            </select>\n                            </span>\n                          </div>\n                        </div>\n                        <div class=\"col-sm form-group mb-3\" data-for=\"guests\">\n                            <input name=\"notes\" placeholder=\"Additional Notes\" data-form-field=\"notes\" class=\"form-control\">\n                        </div>\n\n\n                        <div mbr-buttons=\"true\" mbr-theme-style=\"display-7\" data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\" class=\"col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn form-rsvp-button\">\n                          <div class=\"rsvp-wrapper\"><button class=\"btn btn-primary\" type=\"submit\">RSVP</button>\n                          <img hidden=\"hidden\" id=\"loading\" src=\"@PROJECT_PATH@/assets/images/loading.gif\" alt=\"Mobirise Website Builder\" title>\n                          </div>\n                        </div>\n                       \n                        <div>\n                          <div hidden=\"hidden\" class=\"alert alert-success col-12\" id=\"successAlert\">Thank you, your response was recorded!</div>\n                          <div hidden=\"hidden\" class=\"alert alert-danger col-12\" id=\"errorAlert\">There was a problem with your submission, please try again later!</div>\n                        </div>\n                    </div>\n                    <input hidden=\"hidden\" name=\"honeypot\">\n                </form>\n                [JS_CODE_0]\n            \n          </div>\n\n\n       \n\n \n\n        </div>\n        -->\n\n        <!-- Blender Workshop -->\n        <!--<section id='blender'></section>\n        <div class=\"row justify-content-center event-card\">\n            <div class=\"external-date\">3/13/2025</div>\n\n              <h3 class=\"event-header\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n                <b>Blender Sculpt Workshop</b>\n              </h3>\n              <h4 class=\"event-subtitle\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n                  Learn how to use blender to create your own models!\n                  <br/><br/>\n                  <b>Time and Location:</b> Thursday, March 13, 6:30 PM - 9:00 PM @ FRNY G124\n              </h4>\n          \n          <div class=\"event-map-wrapper\">\n            <iframe class=\"event-figure col-sm-12\" title=\"Event Location\" src=\"https://www.google.com/maps/embed/v1/place?q=FRNY,+West+Stadium+Avenue,+West+Lafayette,+IN,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8\"></iframe>\n          </div>\n          \n          <img class=\"event-figure small\" src=\"@PROJECT_PATH@/assets/images/blender-workshop.png\" alt=\"Mobirise Website Builder\" title>\n          \n        </div>-->\n\n        \n</div></section>",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"form5 \" group=\"Forms\" plugins=\"formstyler, datepicker\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n        <header>Background</header>\n        <fieldset type=\"background\" parallax name=\"bg\">\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n   \n    </mbr-parameters>\n\n\n\n\n    <div class=\"events-wrapper\">\n    <!--  ########   Event Cards   ######## -->\n      <!-- <h3>No upcoming events! Please check again later.</h3> -->\n\n         <!-- General Meeting -->\n        <section id='general'></section>\n        <div class=\"row justify-content-center event-card\">\n            <div class=\"external-date\">4/21/2025</div>\n\n              <h3 class=\"event-header\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n                <b>April General Meeting</b>\n              </h3>\n              <h4 class=\"event-subtitle\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n                  Catch up with the latest club updates, or talk with us about upcoming events!\n                  <br/><br/>\n                  <b>Time and Location:</b> Monday, April 21, 6:00 PM @ KNOY B033\n              </h4>\n          \n          <div class=\"event-map-wrapper\">\n            <iframe class=\"event-figure col-sm-12\" title=\"Event Location\" src=\"https://www.google.com/maps/embed/v1/place?q=FRNY,+West+Stadium+Avenue,+West+Lafayette,+IN,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8\"></iframe>\n          </div>\n                  \n        </div>\n\n        <!-- 10th Anniversary -->\n        <!--\n        <section id='anniversary'></section>\n        <div class=\"row justify-content-center event-card\">\n            <div class=\"external-date\">3/7/2025</div>\n\n              <h3 class=\"event-header\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n                <b>3DPC 10th Anniversary</b>\n              </h3>\n              <h4 class=\"event-subtitle\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n                  Join us for the 10th anniversary of the Purdue 3D Printing Club!  \n                  <br/><br/>\n                  <b>Time and Location:</b> Friday, March 7, 7:00 PM - 9:00 PM @ STEW 310\n              </h4>\n\n          <div class=\"event-map-wrapper\">\n             <iframe class=\"event-figure col-sm-12\" title=\"Event Location\" src=\"https://www.google.com/maps/embed/v1/place?q=Stewart+Center,+Memorial+Mall+Drive,+West+Lafayette,+IN,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8\"></iframe>\n          </div>\n            <div class=\"row justify-content-center\">\n                <form action=\"https://script.google.com/macros/s/AKfycbzuwoHBSkse1y1cV0uAsFvtey19fknP_1x7z6hejRCro2JFId5c3qrPNfbKfhCHAuJF/exec\" name=\"Form Name\" method=\"POST\" class=\"mbr-form form-with-styler\" id=\"anniversary_form\">\n                        \n                    <div class=\"dragArea row\">\n                        <div class=\"col-md col-sm-12 form-group mb-3\" data-for=\"first_name\">\n                            <input type=\"text\" required name=\"first_name\" placeholder=\"First Name\" data-form-field=\"first_name\" class=\"form-control\" value>\n                        </div>\n                        <div class=\"col-md col-sm-12 form-group mb-3\" data-for=\"last_name\">\n                            <input type=\"text\" required name=\"last_name\" placeholder=\"Last Name\" data-form-field=\"last_name\" class=\"form-control\" value>\n                        </div>\n                        <div class=\"col-12 form-group mb-3\" data-for=\"email\">\n                            <input type=\"email\" required name=\"email\" placeholder=\"Email\" data-form-field=\"email\" class=\"form-control\" value>\n                        </div>\n                        <div class=\"col-md form-group mb-3 attending-wrapper form-control\" data-for=\"guests\">\n                          <div class=\"attending\">\n                            <span>Will you be attending?</span>\n                            <span>\n                              <select class=\"attending-dropdown\" name=\"attending\" required>\n                                <option value=\"In-Person\">In-Person</option>\n                                <option value=\"Virtually\">Virtually</option>\n                                <option value=\"No\">No</option>\n                            </select>\n                            </span>\n                          </div>\n                        </div>\n                        <div class=\"col-sm form-group mb-3\" data-for=\"guests\">\n                            <input name=\"notes\" placeholder=\"Additional Notes\" data-form-field=\"notes\" class=\"form-control\">\n                        </div>\n\n\n                        <div mbr-buttons=\"true\" mbr-theme-style=\"display-7\" data-toolbar=\"-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd\" class=\"col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn form-rsvp-button\">\n                          <div class=\"rsvp-wrapper\"><button class=\"btn btn-primary\" type=\"submit\">RSVP</button>\n                          <img hidden=\"hidden\" id=\"loading\" src=\"@PROJECT_PATH@/assets/images/loading.gif\" alt=\"Mobirise Website Builder\" title>\n                          </div>\n                        </div>\n                       \n                        <div>\n                          <div hidden=\"hidden\" class=\"alert alert-success col-12\" id=\"successAlert\">Thank you, your response was recorded!</div>\n                          <div hidden=\"hidden\" class=\"alert alert-danger col-12\" id=\"errorAlert\">There was a problem with your submission, please try again later!</div>\n                        </div>\n                    </div>\n                    <input hidden=\"hidden\" name=\"honeypot\">\n                </form>\n                <script>\n                  document.getElementById('anniversary_form').addEventListener('submit', function(e) {\n                  e.preventDefault(); // Prevent the default full-page submit\n                  \n                  // Hide both alerts at the beginning of submission\n                  let successAlert = document.getElementById('successAlert');\n                  let errorAlert = document.getElementById('errorAlert');\n                  let loading = document.getElementById('loading')\n                  successAlert.hidden = true;\n                  errorAlert.hidden = true;\n                  loading.hidden=true;\n\n\n                  const formData = new FormData(this);\n                  loading.hidden = false;\n                  fetch(this.action, {\n                    method: 'POST',\n                    body: formData\n                  })\n                  .then(response => response.json())\n                  .then(data => {\n                    loading.hidden = true;\n                    \n                    if (data.result === 'success') {\n                      successAlert.hidden = false;\n                      setTimeout(() => {\n                          successAlert.hidden = true;\n                          errorAlert.hidden = true;\n                      }, 5000)\n                      this.reset();\n                    } else {\n                      errorAlert.hidden = false;\n                      setTimeout(() => {\n                          errorAlert.hidden = true;\n                          successAlert.hidden = true;\n                      }, 5000)        \n                    }\n                  })\n                  .catch(error => {\n                    console.error('Error:', error);\n                    errorAlert.hidden = false;\n                    setTimeout(() => {\n                          errorAlert.hidden = true;\n                          successAlert.hidden = true;\n                      }, 5000)     \n                    loading.hidden = true;\n                        });\n                });\n                </script>\n            \n          </div>\n\n\n       \n\n \n\n        </div>\n        -->\n\n        <!-- Blender Workshop -->\n        <!--<section id='blender'></section>\n        <div class=\"row justify-content-center event-card\">\n            <div class=\"external-date\">3/13/2025</div>\n\n              <h3 class=\"event-header\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n                <b>Blender Sculpt Workshop</b>\n              </h3>\n              <h4 class=\"event-subtitle\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n                  Learn how to use blender to create your own models!\n                  <br/><br/>\n                  <b>Time and Location:</b> Thursday, March 13, 6:30 PM - 9:00 PM @ FRNY G124\n              </h4>\n          \n          <div class=\"event-map-wrapper\">\n            <iframe class=\"event-figure col-sm-12\" title=\"Event Location\" src=\"https://www.google.com/maps/embed/v1/place?q=FRNY,+West+Stadium+Avenue,+West+Lafayette,+IN,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8\"></iframe>\n          </div>\n          \n          <img class=\"event-figure small\" src=\"@PROJECT_PATH@/assets/images/blender-workshop.png\" alt=\"Mobirise Website Builder\" title>\n          \n        </div>-->\n\n        \n</div></section>",
           "_cid": "uCwdf9puIk",
           "_anchor": "form02-2j",
           "_PHPplaceholders": [],
@@ -5222,15 +5222,391 @@
                 "background-image": "url(@fallBackImage)"
               }
             },
+            ".white-text": {
+              "color": "white"
+            },
+            "section": {
+              "scroll-margin-top": "260px"
+            }
+          },
+          "_name": "article11",
+          "_sourceTheme": "startm5",
+          "_customHTML": "\n<section data-bs-version=\"5.1\" class=\"article11\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n       <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"4\" condition=\"fullScreen == false\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"4\" max=\"12\" step=\"1\" value=\"10\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/prusa-img.jpg\" selected parallax>\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\">\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">        \n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\">\n    </div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"title col-md-12 col-lg-{{textWidth}}\">\n                <h3 class=\"mbr-section-title mbr-fonts-style align-center mt-0 mb-0 white-text\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\"><b>About Our Printers</b></h3>\n                <h4 class=\"mbr-section-subtitle align-center mbr-fonts-style mt-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-7\"></h4>\n                <div class=\"mbr-section-btn align-center mt-4\" mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-4\">\n                    <a class=\"btn btn-secondary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">\n                        Learn more\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n  <section id=\"printers\"></section>\n\n</section>",
+          "_cid": "uHTEB9QjqU",
+          "_anchor": "article11-2t",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when not (@spacing)": {
+              ".row": {
+                "margin-left": "0",
+                "margin-right": "0"
+              },
+              ".item": {
+                "padding-left": "0",
+                "padding-right": "0"
+              }
+            },
+            "& when (@spacing)": {
+              ".item": {
+                "margin-bottom": "2rem"
+              },
+              "@media (max-width: 767px)": {
+                ".item": {
+                  "margin-bottom": "1rem"
+                }
+              }
+            },
+            ".item-wrapper": {
+              "position": "relative",
+              ".icon-wrapper": {
+                "pointer-events": "none",
+                "position": "absolute",
+                "width": "60px",
+                "height": "60px",
+                "font-size": "22px",
+                "left": "50%",
+                "top": "50%",
+                "display": "flex",
+                "align-items": "center",
+                "justify-content": "center",
+                "border": "2px solid transparent",
+                "border-radius": "50%",
+                "opacity": "0",
+                "color": "#464845 !important",
+                "transform": "translateX(-50%) translateY(-50%)",
+                "background-color": "#edefea !important",
+                "transition": "0.2s"
+              },
+              "&:hover": {
+                ".icon-wrapper": {
+                  "opacity": "1"
+                }
+              },
+              "display": "inline-block"
+            },
+            ".carousel-control, .close": {
+              "background": "#1b1b1b"
+            },
+            ".carousel-control-prev": {
+              "margin-left": "2.5rem",
+              "span": {
+                "margin-right": "5px"
+              }
+            },
+            ".carousel-control-next": {
+              "margin-right": "2.5rem",
+              "span": {
+                "margin-left": "5px"
+              }
+            },
+            ".close": {
+              "position": "fixed",
+              "opacity": "0.5",
+              "font-size": "22px",
+              "font-weight": "300",
+              "width": "60px",
+              "height": "60px",
+              "border-radius": "50%",
+              "color": "#fff",
+              "top": "2.5rem",
+              "right": "2.5rem",
+              "border": "2px solid #fff",
+              "text-shadow": "none",
+              "z-index": "5",
+              "transition": "opacity 0.3s ease",
+              "font-family": "'Moririse2'",
+              "align-items": "center",
+              "justify-content": "center",
+              "display": "flex",
+              "&::before": {
+                "content": "'\\e91a'"
+              },
+              "&:hover": {
+                "opacity": "1",
+                "background": "#000",
+                "color": "#fff"
+              }
+            },
+            ".carousel-control": {
+              "display": "flex",
+              "top": "50%",
+              "width": "60px",
+              "height": "60px",
+              "margin-top": "-1.5rem",
+              "font-size": "22px",
+              "background-color": "rgba(0, 0, 0, 0.5)",
+              "border": "2px solid #fff",
+              "border-radius": "50%",
+              "transition": "all 0.3s",
+              "&.carousel-control-prev": {
+                "left": "0",
+                "margin-left": "2.5rem"
+              },
+              "&.carousel-control-next": {
+                "right": "0",
+                "margin-right": "2.5rem"
+              },
+              "@media (max-width: 767px)": {
+                "top": "auto",
+                "bottom": "1rem"
+              }
+            },
+            ".carousel-indicators": {
+              "position": "absolute",
+              "bottom": "0",
+              "margin-bottom": "3px",
+              "li": {
+                "max-width": "15px",
+                "height": "15px",
+                "width": "15px",
+                "max-height": "15px",
+                "margin": "3px",
+                "background-color": "rgba(0, 0, 0, 0.5)",
+                "border": "2px solid #fff",
+                "border-radius": "50%",
+                "opacity": "0.5",
+                "transition": "all 0.3s",
+                "&.active, &:hover": {
+                  "opacity": "0.9"
+                },
+                "&::after, &::before": {
+                  "content": "none"
+                }
+              },
+              "&.ie-fix": {
+                "left": "50%",
+                "display": "block",
+                "width": "60%",
+                "margin-left": "-30%",
+                "text-align": "center"
+              },
+              "@media (max-width: 768px)": {
+                "display": "none !important"
+              },
+              "@media (max-width: 991px)": {
+                "margin-bottom": "3.625rem !important",
+                "padding-left": "2.5rem",
+                "padding-right": "2.5rem"
+              },
+              "@media (max-width: 767px)": {
+                "display": "none"
+              }
+            },
+            ".carousel-inner": {
+              "display": "flex",
+              "align-items": "center"
+            },
+            ".carousel-inner > .active": {
+              "display": "block"
+            },
+            ".carousel-control.left": {
+              "left": "0",
+              "margin-left": "2.5rem"
+            },
+            ".carousel-control.right": {
+              "right": "0",
+              "margin-right": "2.5rem"
+            },
+            ".carousel-control:hover": {
+              "background": "#1b1b1b",
+              "color": "#fff",
+              "opacity": "1"
+            },
+            "@media (max-width: 768px)": {
+              ".carousel-control, .carousel-indicators, .modal .close": {
+                "position": "fixed"
+              }
+            },
+            "@media (max-width: 767px)": {
+              ".mbr-slider .carousel-control": {
+                "top": "auto",
+                "bottom": "20px"
+              },
+              ".mbr-slider > .container .carousel-control": {
+                "margin-bottom": "0"
+              }
+            },
+            ".carousel-indicators .active, .carousel-indicators li": {
+              "width": "7px",
+              "height": "7px",
+              "margin": "3px",
+              "background": "#000000",
+              "opacity": "0.5",
+              "border": "4px solid #000000"
+            },
+            ".carousel-indicators .active": {
+              "background": "#fff"
+            },
+            ".carousel-indicators li": {
+              "max-width": "15px",
+              "max-height": "15px",
+              "border-radius": "50%"
+            },
+            ".modal": {
+              "padding-left": "0 !important",
+              "position": "fixed",
+              "overflow": "hidden",
+              "padding-right": "0 !important"
+            },
+            ".modal-dialog": {
+              "margin": "0 auto",
+              "max-width": "100%",
+              "padding-left": "1rem",
+              "padding-right": "1rem"
+            },
+            ".modal-content": {
+              "border-radius": "0",
+              "border": "none",
+              "background": "transparent"
+            },
+            ".modal-body": {
+              "padding": "0",
+              "display": "flex",
+              "align-items": "center",
+              "img": {
+                "width": "100%",
+                "object-fit": "contain",
+                "max-height": "~\"calc(100vh - 1.75rem)\""
+              }
+            },
+            ".carousel": {
+              "width": "100%"
+            },
+            ".modal-backdrop.in": {
+              "opacity": "0.8"
+            },
+            ".modal.fade .modal-dialog": {
+              "transition": "margin-top 0.3s ease-out"
+            },
+            ".modal.fade .modal-dialog, .modal.in .modal-dialog": {
+              "transform": "none"
+            },
+            ".mbr-gallery .item-wrapper": {
+              "cursor": "pointer"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".img-wrapper": {
+              "position": "relative"
+            },
+            ".info-box": {
+              "position": "absolute",
+              "top": "5%",
+              "height": "90% !important",
+              "background": "rgba(255, 255, 255, 0.95)",
+              "padding": "10px",
+              "border": "1px solid #ccc",
+              "z-index": "10",
+              "width": "300px",
+              "white-space": "wrap",
+              "opacity": "0",
+              "transform": "scaleX(0)",
+              "transform-origin": "left center",
+              "transition": "transform 0.3s ease, opacity 0.3s ease",
+              "pointer-events": "none"
+            },
+            ".img-wrapper img": {
+              "width": "100%",
+              "max-height": "600px",
+              "display": "block",
+              "cursor": "pointer",
+              "border-radius": "15px !important",
+              "overflow": "hidden !important",
+              "outline": "1px solid black",
+              "box-shadow": "5px 5px 10px rgba(0, 0, 0, 0.2)"
+            },
+            ".info-box h2.printer-title": {
+              "margin-top": "0",
+              "margin-bottom": "10px",
+              "font-size": "20px",
+              "color": "#333"
+            },
+            ".info-box hr": {
+              "border": "none",
+              "border-top": "1px solid #ccc",
+              "margin": "10px 0"
+            },
+            ".info-row": {
+              "margin-bottom": "8px"
+            },
+            ".label": {
+              "font-weight": "bold",
+              "color": "#555"
+            },
+            "section": {
+              "scroll-margin-top": "180px"
+            }
+          },
+          "_name": "gallery02",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"gallery1 mbr-gallery\" plugins=\"Masonry, Gallery\" group=\"Gallery & Slider\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">   \n    <mbr-parameters>\n        <input type=\"id\" name=\"idGallery\">\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <select title=\"Columns\" name=\"cardsWidth\">\n            <option value=\"12\">1</option>\n            <option value=\"6\">2</option>\n            <option value=\"4\">3</option>\n            <option value=\"3\" selected>4</option>\n        </select>\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n        <header>Images</header>\n        <input type=\"checkbox\" title=\"Spacing\" name=\"spacing\" checked>\n        <input type=\"checkbox\" title=\"Caption\" name=\"showItemSubtitle\" checked>\n        <header>Popup Slider</header>\n        <input type=\"checkbox\" title=\"Fade Effect\" name=\"fade\">\n        <input type=\"checkbox\" title=\"Autoplay\" name=\"autoplay\">\n        <input type=\"range\" title=\"Interval\" name=\"interval\" min=\"3\" max=\"10\" value=\"5\" step=\"1\" condition=\"autoplay\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n            <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n        </fieldset>\n        <header condition=\"bg.type!=='color'\">Overlay</header>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    \n    \n\n    <div mbr-class=\"{'container': !fullWidth,\n                    'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 content-head\">\n                <div class=\"mbr-section-head mb-5\" mbr-if=\"showTitle || showSubtitle\">\n                    <h3 class=\"mbr-section-title mbr-fonts-style align-center m-0\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>FDM Printers</b></h3>\n                    <h4 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\"></h4>\n                </div>\n            </div>\n        </div>\n        <div class=\"row mbr-gallery mbr-masonry\" data-masonry=\"{&quot;percentPosition&quot;: true }\">\n            <div class=\"col-12 col-md-6 col-lg-{{cardsWidth}} item gallery-image active\">\n                <div class=\"item-wrapper img-wrapper\" data-toggle=\"modal\" data-bs-toggle=\"modal\" data-target=\"#{{idGallery}}-modal\" data-bs-target=\"#{{idGallery}}-modal\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/mk4.jpg\" alt=\"Mobirise Website Builder\" data-target=\"#lb-{{idGallery}}\" data-bs-target=\"#lb-{{idGallery}}\" data-slide-to=\"0\" data-bs-slide-to=\"0\">\n                    <div class=\"info-box\">\n                      <h2 class=\"printer-title\">Prusa MK4</h2>\n                      <hr>\n                      <div class=\"info-row\"><span class=\"label\">Quantity:</span> 8 printers</div>\n                      <div class=\"info-row\"><span class=\"label\">Build Volume:</span> 250 x 210 x 220 mm</div>\n                      <div class=\"info-row\"><span class=\"label\">Usage notes:</span> Open </div>\n                      <div class=\"info-row\"><span class=\"label\">Other notes:</span> High quality, easy to remove supports</div>\n                    </div>\n              </div>\n              <h6 class=\"mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-1\" mbr-theme-style=\"display-7\" mbr-if=\"showItemSubtitle\">Prusa Mk4<br><br></h6>\n              </div>\n              <div class=\"col-12 col-md-6 col-lg-{{cardsWidth}} item gallery-image\">\n                <div class=\"item-wrapper img-wrapper\" data-toggle=\"modal\" data-bs-toggle=\"modal\" data-target=\"#{{idGallery}}-modal\" data-bs-target=\"#{{idGallery}}-modal\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/mini.jpg\" alt=\"Mobirise Website Builder\" data-target=\"#lb-{{idGallery}}\" data-bs-target=\"#lb-{{idGallery}}\" data-slide-to=\"2\" data-bs-slide-to=\"2\">\n                    <div class=\"info-box\">\n                      <h2 class=\"printer-title\">Prusa Mini</h2>\n                      <hr>\n                      <div class=\"info-row\"><span class=\"label\">Quantity:</span> 5 printers</div>\n                      <div class=\"info-row\"><span class=\"label\">Build Volume:</span> 180 x 180 x 180 mm</div>\n                      <div class=\"info-row\"><span class=\"label\">Usage notes:</span> Open </div>\n                      <div class=\"info-row\"><span class=\"label\">Other notes:</span> None</div>\n                    </div>\n                </div>\n                <h6 class=\"mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-1\" mbr-theme-style=\"display-7\" mbr-if=\"showItemSubtitle\">Prusa Mini<br><br></h6>\n              </div>\n              <div class=\"col-12 col-md-6 col-lg-{{cardsWidth}} item gallery-image\">\n                <div class=\"item-wrapper img-wrapper\" data-toggle=\"modal\" data-bs-toggle=\"modal\" data-target=\"#{{idGallery}}-modal\" data-bs-target=\"#{{idGallery}}-modal\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/mk3-2.jpg\" alt=\"Mobirise Website Builder\" data-target=\"#lb-{{idGallery}}\" data-bs-target=\"#lb-{{idGallery}}\" data-slide-to=\"3\" data-bs-slide-to=\"3\">\n                    <div class=\"info-box\">\n                    <h2 class=\"printer-title\">Prusa Mk3S</h2>\n                      <hr>\n                      <div class=\"info-row\"><span class=\"label\">Quantity:</span> 1 printer</div>\n                      <div class=\"info-row\"><span class=\"label\">Build Volume:</span> 250 x 210 x 210 mm</div>\n                      <div class=\"info-row\"><span class=\"label\">Usage notes:</span> Open </div>\n                      <div class=\"info-row\"><span class=\"label\">Other notes:</span> Older but still good quality, uses an SD card\n                      </div>\n                    </div>\n                </div>\n                <h6 class=\"mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-1\" mbr-theme-style=\"display-7\" mbr-if=\"showItemSubtitle\">Prusa Mk3S<br><br></h6>\n              </div>\n              <div class=\"col-12 col-md-6 col-lg-{{cardsWidth}} item gallery-image\">\n                <div class=\"item-wrapper img-wrapper\" data-toggle=\"modal\" data-bs-toggle=\"modal\" data-target=\"#{{idGallery}}-modal\" data-bs-target=\"#{{idGallery}}-modal\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/xl.jpg\" alt=\"Mobirise Website Builder\" data-target=\"#lb-{{idGallery}}\" data-bs-target=\"#lb-{{idGallery}}\" data-slide-to=\"4\" data-bs-slide-to=\"4\">\n                    <div class=\"info-box\">\n                    <h2 class=\"printer-title\">Prusa XL</h2>\n                      <hr>\n                      <div class=\"info-row\"><span class=\"label\">Quantity:</span> 1 printer</div>\n                      <div class=\"info-row\"><span class=\"label\">Build Volume:</span> 360 x 360 x 360 mm</div>\n                      <div class=\"info-row\"><span class=\"label\">Usage notes:</span> Message multicolor channel </div>\n                      <div class=\"info-row\"><span class=\"label\">Other notes:</span> Toolhead changer and 5 nozzles enables easy multi-color prints</div>\n                    </div>\n                </div>\n                <h6 class=\"mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-1\" mbr-theme-style=\"display-7\" mbr-if=\"showItemSubtitle\">Prusa XL<br></h6>\n              </div>\n              <div class=\"col-12 col-md-6 col-lg-{{cardsWidth}} item gallery-image\">\n                <div class=\"item-wrapper img-wrapper\" data-toggle=\"modal\" data-bs-toggle=\"modal\" data-target=\"#{{idGallery}}-modal\" data-bs-target=\"#{{idGallery}}-modal\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/k2.jpg\" alt=\"Mobirise Website Builder\" data-target=\"#lb-{{idGallery}}\" data-bs-target=\"#lb-{{idGallery}}\" data-slide-to=\"5\" data-bs-slide-to=\"5\">\n                    <div class=\"info-box\">\n                      <h2 class=\"printer-title\">Creality K2</h2>\n                      <hr>\n                      <div class=\"info-row\"><span class=\"label\">Quantity:</span> 1 printer</div>\n                      <div class=\"info-row\"><span class=\"label\">Build Volume:</span> 250 x 210 x 210 mm</div>\n                      <div class=\"info-row\"><span class=\"label\">Usage notes:</span> Message multicolor channel </div>\n                      <div class=\"info-row\"><span class=\"label\">Other notes:</span> AMS for multicolor prints</div>\n                    </div>\n                </div>\n                <h6 class=\"mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-1\" mbr-theme-style=\"display-7\" mbr-if=\"showItemSubtitle\">Creality K2<br><br></h6>\n              </div>\n              <div class=\"col-12 col-md-6 col-lg-{{cardsWidth}} item gallery-image\">\n                <div class=\"item-wrapper img-wrapper\" data-toggle=\"modal\" data-bs-toggle=\"modal\" data-target=\"#{{idGallery}}-modal\" data-bs-target=\"#{{idGallery}}-modal\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/cr10.jpeg\" alt=\"Mobirise Website Builder\" data-target=\"#lb-{{idGallery}}\" data-bs-target=\"#lb-{{idGallery}}\" data-slide-to=\"6\" data-bs-slide-to=\"6\">\n                     <div class=\"info-box\">\n                      <h2 class=\"printer-title\">Creality CR-10</h2>\n                      <hr>\n                      <div class=\"info-row\"><span class=\"label\">Quantity:</span> 1 printer</div>\n                      <div class=\"info-row\"><span class=\"label\">Build Volume:</span> 300 x 300 x 400 mm</div>\n                      <div class=\"info-row\"><span class=\"label\">Usage notes:</span> Restricted </div>\n                      <div class=\"info-row\"><span class=\"label\">Other notes:</span> Still under testing after being fixed </div>\n                    </div>\n                </div>\n                <h6 class=\"mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-1\" mbr-theme-style=\"display-7\" mbr-if=\"showItemSubtitle\">Creality CR-10</h6>\n              </div>\n              <div class=\"col-12 col-md-6 col-lg-{{cardsWidth}} item gallery-image\">\n                <div class=\"item-wrapper img-wrapper\" data-toggle=\"modal\" data-bs-toggle=\"modal\" data-target=\"#{{idGallery}}-modal\" data-bs-target=\"#{{idGallery}}-modal\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/ender3-1.jpg\" alt=\"Mobirise Website Builder\" data-target=\"#lb-{{idGallery}}\" data-bs-target=\"#lb-{{idGallery}}\" data-slide-to=\"7\" data-bs-slide-to=\"7\">\n                   <div class=\"info-box\">\n                      <h2 class=\"printer-title\">Creality Ender 3</h2>\n                      <hr>\n                      <div class=\"info-row\"><span class=\"label\">Quantity:</span> 4 printers</div>\n                      <div class=\"info-row\"><span class=\"label\">Build Volume:</span> 220 x 220 x 250 mm</div>\n                      <div class=\"info-row\"><span class=\"label\">Usage notes:</span> Message TPU or PETG channels </div>\n                      <div class=\"info-row\"><span class=\"label\">Other notes:</span> Operational but used for specialty filament </div>\n                    </div>\n                </div>\n                <h6 class=\"mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-1\" mbr-theme-style=\"display-7\" mbr-if=\"showItemSubtitle\">Creality Ender 3</h6>\n              </div>\n              <div class=\"col-12 col-md-6 col-lg-{{cardsWidth}} item gallery-image\">\n                <div class=\"item-wrapper img-wrapper\" data-toggle=\"modal\" data-bs-toggle=\"modal\" data-target=\"#{{idGallery}}-modal\" data-bs-target=\"#{{idGallery}}-modal\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/sigma.jpg\" alt=\"Mobirise Website Builder\" data-target=\"#lb-{{idGallery}}\" data-bs-target=\"#lb-{{idGallery}}\" data-slide-to=\"8\" data-bs-slide-to=\"8\">\n                    <div class=\"info-box\">\n                      <h2 class=\"printer-title\">BCN3D Sigma</h2>\n                      <hr>\n                      <div class=\"info-row\"><span class=\"label\">Quantity:</span> 1 printer</div>\n                      <div class=\"info-row\"><span class=\"label\">Build Volume:</span> 420 x 300 x 200 mm</div>\n                      <div class=\"info-row\"><span class=\"label\">Usage notes:</span> Restricted -- Message an officer </div>\n                      <div class=\"info-row\"><span class=\"label\">Other notes:</span> Uses 2.85mm filament instead of 1.75mm</div>\n                    </div>\n                </div>\n                <h6 class=\"mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-1\" mbr-theme-style=\"display-7\" mbr-if=\"showItemSubtitle\">BCN3D Sigma</h6>\n              </div>\n              <div class=\"col-12 col-md-6 col-lg-{{cardsWidth}} item gallery-image\">\n                <div class=\"item-wrapper img-wrapper\" data-toggle=\"modal\" data-bs-toggle=\"modal\" data-target=\"#{{idGallery}}-modal\" data-bs-target=\"#{{idGallery}}-modal\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/onyx-1.jpg\" alt=\"Mobirise Website Builder\" data-target=\"#lb-{{idGallery}}\" data-bs-target=\"#lb-{{idGallery}}\" data-slide-to=\"9\" data-bs-slide-to=\"9\">\n                    <div class=\"info-box\">\n                      <h2 class=\"printer-title\">Markforged Onyx</h2>\n                      <hr>\n                      <div class=\"info-row\"><span class=\"label\">Quantity:</span> 1 printer</div>\n                      <div class=\"info-row\"><span class=\"label\">Build Volume:</span> 320 x 132 x 154 mm</div>\n                      <div class=\"info-row\"><span class=\"label\">Usage notes:</span> Restricted -- Message an officer </div>\n                      <div class=\"info-row\"><span class=\"label\">Other notes:</span> Can print with onyx carbon fiber filament</div>\n                    </div>\n                </div>\n                <h6 class=\"mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-1\" mbr-theme-style=\"display-7\" mbr-if=\"showItemSubtitle\">Markforged Onyx</h6>\n              </div>\n              <div class=\"col-12 col-md-6 col-lg-{{cardsWidth}} item gallery-image\">\n                <div class=\"item-wrapper img-wrapper\" data-toggle=\"modal\" data-bs-toggle=\"modal\" data-target=\"#{{idGallery}}-modal\" data-bs-target=\"#{{idGallery}}-modal\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/raise3d.jpg\" alt=\"Mobirise Website Builder\" data-target=\"#lb-{{idGallery}}\" data-bs-target=\"#lb-{{idGallery}}\" data-slide-to=\"10\" data-bs-slide-to=\"10\">\n                          <div class=\"info-box\">\n                      <h2 class=\"printer-title\">Raise3D Pro2</h2>\n                      <hr>\n                      <div class=\"info-row\"><span class=\"label\">Quantity:</span> 1 printer</div>\n                      <div class=\"info-row\"><span class=\"label\">Build Volume:</span> 280 x 305 x 300 mm</div>\n                      <div class=\"info-row\"><span class=\"label\">Usage notes:</span> Message multicolor channel </div>\n                      <div class=\"info-row\"><span class=\"label\">Other notes:</span> Dual extrusion for multicolor prints, single extrusion print size is 305 x 305 x 300 mm</div>\n                    </div>\n                </div>\n                <h6 class=\"mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-1\" mbr-theme-style=\"display-7\" mbr-if=\"showItemSubtitle\">Raise3D Pro2</h6>\n              </div>\n            \n            \n            \n            \n            \n        </div>\n    </div>\n\n\n    <!-- SLS and SLA printers -->\n    <div mbr-class=\"{'container': !fullWidth,\n                    'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 content-head\">\n                <div class=\"mbr-section-head mb-5\" mbr-if=\"showTitle || showSubtitle\">\n                    <h3 class=\"mbr-section-title mbr-fonts-style align-center mt-4\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>SLA and SLS Printers</b></h3>\n                    <h4 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\"></h4>\n                </div>\n            </div>\n        </div>\n        <div class=\"row mbr-gallery mbr-masonry\" data-masonry=\"{&quot;percentPosition&quot;: true }\">\n            <div class=\"col-12 col-md-6 col-lg-{{cardsWidth}} item gallery-image\">\n                <div class=\"item-wrapper img-wrapper\" data-toggle=\"modal\" data-bs-toggle=\"modal\" data-target=\"#{{idGallery}}-modal\" data-bs-target=\"#{{idGallery}}-modal\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/photon.jpg\" alt=\"Mobirise Website Builder\" data-target=\"#lb-{{idGallery}}\" data-bs-target=\"#lb-{{idGallery}}\" data-slide-to=\"11\" data-bs-slide-to=\"11\">\n                    <div class=\"info-box\">\n                      <h2 class=\"printer-title\">Anycubic Photon Mono 5s</h2>\n                      <hr>\n                      <div class=\"info-row\"><span class=\"label\">Quantity:</span> 1 printer</div>\n                      <div class=\"info-row\"><span class=\"label\">Build Volume:</span> 218 x 123 x 200 mm</div>\n                      <div class=\"info-row\"><span class=\"label\">Usage notes:</span> Message SLA channel </div>\n                      <div class=\"info-row\"><span class=\"label\">Other notes:</span> SLA </div>\n                    </div>\n                </div>\n                <h6 class=\"mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-1\" mbr-theme-style=\"display-7\" mbr-if=\"showItemSubtitle\">Anycubic Photon Mono 5s</h6>\n          </div>\n\n          <div class=\"col-12 col-md-6 col-lg-{{cardsWidth}} item gallery-image\">\n                <div class=\"item-wrapper img-wrapper\" data-toggle=\"modal\" data-bs-toggle=\"modal\" data-target=\"#{{idGallery}}-modal\" data-bs-target=\"#{{idGallery}}-modal\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/peopoly.jpg\" alt=\"Mobirise Website Builder\" data-target=\"#lb-{{idGallery}}\" data-bs-target=\"#lb-{{idGallery}}\" data-slide-to=\"11\" data-bs-slide-to=\"11\">\n                     <div class=\"info-box\">\n                      <h2 class=\"printer-title\">Peopoly Phenom XXL V2</h2>\n                      <hr>\n                      <div class=\"info-row\"><span class=\"label\">Quantity:</span> 1 printer</div>\n                      <div class=\"info-row\"><span class=\"label\">Build Volume:</span> 527 x 296 x 550 mm</div>\n                      <div class=\"info-row\"><span class=\"label\">Usage notes:</span> Message SLA channel </div>\n                      <div class=\"info-row\"><span class=\"label\">Other notes:</span> None </div>\n                    </div>\n                </div>\n                <h6 class=\"mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-1\" mbr-theme-style=\"display-7\" mbr-if=\"showItemSubtitle\">Peopoly Phenom XXL V2</h6>\n          </div>\n\n          <div class=\"col-12 col-md-6 col-lg-{{cardsWidth}} item gallery-image\">\n                <div class=\"item-wrapper img-wrapper\" data-toggle=\"modal\" data-bs-toggle=\"modal\" data-target=\"#{{idGallery}}-modal\" data-bs-target=\"#{{idGallery}}-modal\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/fuse.jpg\" alt=\"Mobirise Website Builder\" data-target=\"#lb-{{idGallery}}\" data-bs-target=\"#lb-{{idGallery}}\" data-slide-to=\"11\" data-bs-slide-to=\"11\">\n                     <div class=\"info-box\">\n                      <h2 class=\"printer-title\">Formlabs Fuse 1</h2>\n                      <hr>\n                      <div class=\"info-row\"><span class=\"label\">Quantity:</span> 1 printer</div>\n                      <div class=\"info-row\"><span class=\"label\">Build Volume:</span> 165 x 165 x 300 mm</div>\n                      <div class=\"info-row\"><span class=\"label\">Usage notes:</span> Message SLS channel </div>\n                      <div class=\"info-row\"><span class=\"label\">Other notes:</span> Expensive -- may have to wait a while for one large batch print </div>\n                    </div>\n                </div>\n                <h6 class=\"mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-1\" mbr-theme-style=\"display-7\" mbr-if=\"showItemSubtitle\">Formlabs Fuse 1</h6>\n          </div>\n\n        </div>\n      </div>\n\n  \n[JS_CODE_0]\n\n\n</section>",
+          "_cid": "uHTIsFC3d8",
+          "_anchor": "gallery02-2v",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [
+            "<script type=\"module\">\n  document.querySelectorAll('.img-wrapper').forEach(container => {\n  console.log('container: ', container)\n  const img = container.querySelector('img');\n  const infoBox = container.querySelector('.info-box');\n\n  img.addEventListener('mouseenter', () => {\n    const rect = container.getBoundingClientRect();\n    const viewportWidth = window.innerWidth;\n\n    // Determine if there's more room on the right or left\n    const spaceRight = viewportWidth - rect.right;\n    const spaceLeft = rect.left;\n\n  if (spaceRight > 300) {\n      infoBox.style.left = '101%';\n      infoBox.style.right = 'auto';\n\n    } else if (spaceLeft > 300) {\n      infoBox.style.left = 'auto';\n      infoBox.style.right = '101%';\n      infoBox.style.transformOrigin = 'right center';\n    } else {\n      // not enough space on either side, put on top of the image\n      infoBox.style.left = 'auto';\n      infoBox.style.right = 'auto';\n\n    }\n\n    infoBox.style.pointerEvents = 'auto';\n    infoBox.style.opacity = '1';\n    infoBox.style.transform = 'scaleX(1)';\n  });\n\n  img.addEventListener('mouseleave', () => {\n    infoBox.style.opacity = '0';\n    infoBox.style.transform = 'scaleX(0)';\n    infoBox.style.pointerEvents = 'none';\n  });\n}); \n    </script>"
+          ],
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
             ".row": {
               "flex-direction": "row-reverse"
             }
           },
           "_name": "image01",
           "_sourceTheme": "startm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image01\" group=\"Image & Video\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"textWidth\" title=\"Image\" min=\"4\" max=\"12\" step=\"1\" value=\"9\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 col-lg-{{textWidth}}\">\n        <div class=\"image-wrapper mb-4\">\n          <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/officers-1.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <h4 class=\"mbr-description mbr-fonts-style mb-3 align-center\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-description\">\n          <b>Officers</b></h4>\n        <p class=\"mbr-description mbr-fonts-style mb-0 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-description\">\n          Unleash your creativity and sew your way to endless possibilities.\n        </p>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image01\" group=\"Image & Video\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n  <section id=\"officers\"></section>\n\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"4\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"textWidth\" title=\"Image\" min=\"4\" max=\"12\" step=\"1\" value=\"9\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 col-lg-{{textWidth}}\">\n        <div class=\"image-wrapper mb-4\">\n          <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/officers-1.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <h4 class=\"mbr-description mbr-fonts-style mb-3 align-center\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-description\">\n          <b>Officers</b></h4>\n        <p class=\"mbr-description mbr-fonts-style mb-0 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-description\">\n          Unleash your creativity and sew your way to endless possibilities.\n        </p>\n      </div>\n    </div>\n  </div>\n</section>",
           "_cid": "uF5gNfuLad",
           "_anchor": "image01-2r",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
           "_protectedParams": [],
           "_global": false,
           "_once": false,
