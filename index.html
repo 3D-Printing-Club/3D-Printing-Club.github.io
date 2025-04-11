@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=iDuMMq"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=iDuMMq" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=cqEdAo"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=cqEdAo" type="text/css">
 
   
   
@@ -95,35 +95,15 @@
 
 </section>
 
-<section data-bs-version="5.1" class="form5 cid-uCwdf9puIk" id="form02-2j" data-rv-view="68">
+<section data-bs-version="5.1" class="form5 cid-uCwdf9puIk" id="form02-2j" data-rv-view="1004">
     
 
 
 
 
-    <div class="events-wrapper">
+    <div id="events-wrapper">
     <!--  ########   Event Cards   ######## -->
-      <!-- <h3>No upcoming events! Please check again later.</h3> -->
-
-         <!-- General Meeting -->
-        <section id="general"></section>
-        <div class="row justify-content-center event-card">
-            <div class="external-date">4/21/2025</div>
-
-              <h3 class="event-header display-5">
-                <strong>April General Meeting</strong>
-              </h3>
-              <h4 class="event-subtitle display-7">
-                  Catch up with the latest club updates, or talk with us about upcoming events!
-                  <br><br>
-                  <strong>Time and Location:</strong> Monday, April 21, 6:00 PM @ KNOY B033
-              </h4>
-          
-          <div class="event-map-wrapper">
-            <iframe class="event-figure col-sm-12" title="Event Location" src="https://www.google.com/maps/embed/v1/place?q=FRNY,+West+Stadium+Avenue,+West+Lafayette,+IN,+USA&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
-          </div>
-                  
-        </div>
+      <div id="no-events-msg"><h3>No upcoming events! Please check again later.</h3></div>
 
         <!-- 10th Anniversary -->
         <!--
@@ -269,7 +249,124 @@
         </div>-->
 
         
-</div></section>
+</div>
+
+<script type="module">
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js'
+      import { getFirestore, doc, updateDoc, getDoc, onSnapshot,  collection, query, orderBy, limit } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js'
+      import { getAuth, signInAnonymously } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCbFmuNBKIXW091uHm--uRxVSETb6Z0470",
+        authDomain: "dpc-bot.firebaseapp.com",
+        projectId: "dpc-bot",
+        storageBucket: "dpc-bot.firebasestorage.app",
+        messagingSenderId: "846436118402",
+        appId: "1:846436118402:web:faad5d1e4ee3789f00299b"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      const db = getFirestore(app);
+      const auth = getAuth(app);
+
+      signInAnonymously(auth)
+        .then((userCredential) => {
+          console.log('User signed in:', userCredential.user);
+
+          // Create a reference to the "events" collection
+        const eventsCollection = collection(db, 'events');
+        const eventsQuery = query(eventsCollection, orderBy("date", "asc"));
+
+        // Listen for live updates from the collection
+        onSnapshot(eventsQuery, (querySnapshot) => {
+          querySnapshot.docChanges().forEach((change) => {
+            if (change.type === 'added') {
+              let data = change.doc.data()
+              console.log('Document added:', data);
+
+              //dynamically render the new element
+              createEventCard(data)
+            }
+            if (change.type === 'removed') {
+              console.log('Document removed:', change.doc.data());
+
+            }
+            updateNoEventsMessage();
+          });
+        });
+
+        })
+        .catch((error) => {
+          console.error('Error signing in:', error.message);
+        });
+
+            
+    function createEventCard(eventData) {
+        const section = document.getElementById('events-wrapper');
+
+        const card = document.createElement('div');
+        card.className = 'row justify-content-center event-card';
+
+        // Date
+        const dateDiv = document.createElement('div');
+        dateDiv.className = 'external-date';
+        dateDiv.textContent = eventData['date-str'];
+        card.appendChild(dateDiv);
+
+        // Title
+        const title = document.createElement('h3');
+        title.className = 'event-header display-5 animate__animated animate__delay-1s animate__fadeIn';
+        title.setAttribute('mbr-theme-style', 'display-5');
+        title.setAttribute('mbr-if', 'showTitle');
+        title.setAttribute('data-app-selector', '.mbr-section-title');
+
+        const titleBold = document.createElement('b');
+        titleBold.textContent = eventData.title;
+        title.appendChild(titleBold);
+        card.appendChild(title);
+
+        // Subtitle
+        const subtitle = document.createElement('h4');
+        subtitle.className = 'event-subtitle';
+        subtitle.setAttribute('mbr-theme-style', 'display-7');
+        subtitle.setAttribute('mbr-if', 'showSubtitle');
+        subtitle.setAttribute('data-app-selector', '.mbr-section-subtitle');
+
+        subtitle.innerHTML = `
+            ${eventData.message}<br/><br/>
+            <b>Time and Location:</b> ${eventData["time-location"]}
+        `;
+        card.appendChild(subtitle);
+
+        // Map
+        const mapWrapper = document.createElement('div');
+        mapWrapper.className = 'event-map-wrapper';
+
+        const iframe = document.createElement('iframe');
+        iframe.className = 'event-figure col-sm-12';
+        iframe.title = 'Event Location';
+        iframe.src = eventData['map-embed-link'];
+
+        mapWrapper.appendChild(iframe);
+        card.appendChild(mapWrapper);
+
+        section.appendChild(card);
+    }
+
+    function updateNoEventsMessage() {
+    console.log('updating no events msg')
+      const msg = document.getElementById('no-events-msg');
+      const section = document.getElementById('events-wrapper');
+
+      const hasCards = section.querySelectorAll('.event-card').length > 0;
+      console.log('no events msg: hasCards is ', hasCards)
+      msg.style.display = hasCards ? 'none' : 'block';
+    }
+
+    </script>
+</section>
 
 <section data-bs-version="5.1" class="social4 cid-tVYDLZ7uOQ" id="social04-1o">
     

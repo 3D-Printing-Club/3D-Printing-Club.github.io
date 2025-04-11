@@ -1505,14 +1505,14 @@ a {
   margin: 15px 0 15px 0;
   text-align: center;
 }
-.cid-uCwdf9puIk .events-wrapper {
+.cid-uCwdf9puIk #events-wrapper {
   background-color: #f0faff;
 }
 @media (min-width: 600px) {
   .cid-uCwdf9puIk .event-card {
     width: 75%;
   }
-  .cid-uCwdf9puIk .events-wrapper {
+  .cid-uCwdf9puIk #events-wrapper {
     padding: 10px;
   }
 }
@@ -1520,7 +1520,7 @@ a {
   .cid-uCwdf9puIk .event-figure {
     width: 95% !important;
   }
-  .cid-uCwdf9puIk .events-wrapper {
+  .cid-uCwdf9puIk #events-wrapper {
     padding: 5px;
   }
 }
