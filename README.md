@@ -24,7 +24,7 @@ Now here's some more information about how to actually develop the website:
 
 9. You will need the following free code editor extension to directly modify code blocks: go [here](https://witsec.nl/extension-code-editor.html) and download the code editor extension. This will give you the .mbrext file, which you will need to import by going to Extensions > Import (top left). Select the mbrext file in the popup, then click "import anyway". 
 10. This will add a wrench icon when you hover over a code block. Clicking the wrench icon will open a code editor to add your own custom code. Be careful, however, because any errors in here could cause the block to bug out and you might not be able to edit it again. I recommend that you save backups frequently when you directly edit the code in this way.
-11. That's pretty much it! Mobirise is quite intuitive to use. you can add and remove blocks and edit the text inline. There are also some other useful extensions on witsec's website [here] (https://witsec.nl/index.html#our-extensions). Follow the same procedure as the code editor to import them.
+11. That's pretty much it! Mobirise is quite intuitive to use. you can add and remove blocks and edit the text inline. There are also some other useful extensions on witsec's website [here](https://witsec.nl/index.html#our-extensions). Follow the same procedure as the code editor to import them.
 
 
 
