@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=cqEdAo"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=cqEdAo" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=kYJDSI"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=kYJDSI" type="text/css">
 
   
   
@@ -95,7 +95,7 @@
 
 </section>
 
-<section data-bs-version="5.1" class="form5 cid-uCwdf9puIk" id="form02-2j" data-rv-view="1004">
+<section data-bs-version="5.1" class="form5 cid-uCwdf9puIk" id="form02-2j" data-rv-view="337">
     
 
 
@@ -105,148 +105,7 @@
     <!--  ########   Event Cards   ######## -->
       <div id="no-events-msg"><h3>No upcoming events! Please check again later.</h3></div>
 
-        <!-- 10th Anniversary -->
-        <!--
-        <section id='anniversary'></section>
-        <div class="row justify-content-center event-card">
-            <div class="external-date">3/7/2025</div>
-
-              <h3 class="event-header" mbr-theme-style="display-5" mbr-if="showTitle" data-app-selector=".mbr-section-title">
-                <b>3DPC 10th Anniversary</b>
-              </h3>
-              <h4 class="event-subtitle" mbr-theme-style="display-7" mbr-if="showSubtitle" data-app-selector=".mbr-section-subtitle">
-                  Join us for the 10th anniversary of the Purdue 3D Printing Club!  
-                  <br/><br/>
-                  <b>Time and Location:</b> Friday, March 7, 7:00 PM - 9:00 PM @ STEW 310
-              </h4>
-
-          <div class="event-map-wrapper">
-             <iframe class="event-figure col-sm-12" title="Event Location" src="https://www.google.com/maps/embed/v1/place?q=Stewart+Center,+Memorial+Mall+Drive,+West+Lafayette,+IN,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
-          </div>
-            <div class="row justify-content-center">
-                <form action="https://script.google.com/macros/s/AKfycbzuwoHBSkse1y1cV0uAsFvtey19fknP_1x7z6hejRCro2JFId5c3qrPNfbKfhCHAuJF/exec" name="Form Name" method="POST" class="mbr-form form-with-styler" id="anniversary_form">
-                        
-                    <div class="dragArea row">
-                        <div class="col-md col-sm-12 form-group mb-3" data-for="first_name">
-                            <input type="text" required name="first_name" placeholder="First Name" data-form-field="first_name" class="form-control" value>
-                        </div>
-                        <div class="col-md col-sm-12 form-group mb-3" data-for="last_name">
-                            <input type="text" required name="last_name" placeholder="Last Name" data-form-field="last_name" class="form-control" value>
-                        </div>
-                        <div class="col-12 form-group mb-3" data-for="email">
-                            <input type="email" required name="email" placeholder="Email" data-form-field="email" class="form-control" value>
-                        </div>
-                        <div class="col-md form-group mb-3 attending-wrapper form-control" data-for="guests">
-                          <div class="attending">
-                            <span>Will you be attending?</span>
-                            <span>
-                              <select class="attending-dropdown" name="attending" required>
-                                <option value="In-Person">In-Person</option>
-                                <option value="Virtually">Virtually</option>
-                                <option value="No">No</option>
-                            </select>
-                            </span>
-                          </div>
-                        </div>
-                        <div class="col-sm form-group mb-3" data-for="guests">
-                            <input name="notes" placeholder="Additional Notes" data-form-field="notes" class="form-control">
-                        </div>
-
-
-                        <div mbr-buttons="true" mbr-theme-style="display-7" data-toolbar="-mbrBtnMove,-mbrLink,-mbrBtnRemove,-mbrBtnAdd" class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn form-rsvp-button">
-                          <div class="rsvp-wrapper"><button class="btn btn-primary" type="submit">RSVP</button>
-                          <img hidden="hidden" id="loading" src="assets/images/loading.gif" alt="Mobirise Website Builder" title>
-                          </div>
-                        </div>
-                       
-                        <div>
-                          <div hidden="hidden" class="alert alert-success col-12" id="successAlert">Thank you, your response was recorded!</div>
-                          <div hidden="hidden" class="alert alert-danger col-12" id="errorAlert">There was a problem with your submission, please try again later!</div>
-                        </div>
-                    </div>
-                    <input hidden="hidden" name="honeypot">
-                </form>
-                <script>
-                  document.getElementById('anniversary_form').addEventListener('submit', function(e) {
-                  e.preventDefault(); // Prevent the default full-page submit
-                  
-                  // Hide both alerts at the beginning of submission
-                  let successAlert = document.getElementById('successAlert');
-                  let errorAlert = document.getElementById('errorAlert');
-                  let loading = document.getElementById('loading')
-                  successAlert.hidden = true;
-                  errorAlert.hidden = true;
-                  loading.hidden=true;
-
-
-                  const formData = new FormData(this);
-                  loading.hidden = false;
-                  fetch(this.action, {
-                    method: 'POST',
-                    body: formData
-                  })
-                  .then(response => response.json())
-                  .then(data => {
-                    loading.hidden = true;
-                    
-                    if (data.result === 'success') {
-                      successAlert.hidden = false;
-                      setTimeout(() => {
-                          successAlert.hidden = true;
-                          errorAlert.hidden = true;
-                      }, 5000)
-                      this.reset();
-                    } else {
-                      errorAlert.hidden = false;
-                      setTimeout(() => {
-                          errorAlert.hidden = true;
-                          successAlert.hidden = true;
-                      }, 5000)        
-                    }
-                  })
-                  .catch(error => {
-                    console.error('Error:', error);
-                    errorAlert.hidden = false;
-                    setTimeout(() => {
-                          errorAlert.hidden = true;
-                          successAlert.hidden = true;
-                      }, 5000)     
-                    loading.hidden = true;
-                        });
-                });
-                </script>
-            
-          </div>
-
-
        
-
- 
-
-        </div>
-        -->
-
-        <!-- Blender Workshop -->
-        <!--<section id='blender'></section>
-        <div class="row justify-content-center event-card">
-            <div class="external-date">3/13/2025</div>
-
-              <h3 class="event-header" mbr-theme-style="display-5" mbr-if="showTitle" data-app-selector=".mbr-section-title">
-                <b>Blender Sculpt Workshop</b>
-              </h3>
-              <h4 class="event-subtitle" mbr-theme-style="display-7" mbr-if="showSubtitle" data-app-selector=".mbr-section-subtitle">
-                  Learn how to use blender to create your own models!
-                  <br/><br/>
-                  <b>Time and Location:</b> Thursday, March 13, 6:30 PM - 9:00 PM @ FRNY G124
-              </h4>
-          
-          <div class="event-map-wrapper">
-            <iframe class="event-figure col-sm-12" title="Event Location" src="https://www.google.com/maps/embed/v1/place?q=FRNY,+West+Stadium+Avenue,+West+Lafayette,+IN,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
-          </div>
-          
-          <img class="event-figure small" src="assets/images/blender-workshop.png" alt="Mobirise Website Builder" title>
-          
-        </div>-->
 
         
 </div>
@@ -336,9 +195,9 @@
 
         subtitle.innerHTML = `
             ${eventData.message}<br/><br/>
-            <b>Time and Location:</b> ${eventData["time-location"]}
-        `;
+            <b>Time and Location:</b> ${eventData["time-location"]};
         card.appendChild(subtitle);
+        `
 
         // Map
         const mapWrapper = document.createElement('div');
@@ -356,7 +215,7 @@
     }
 
     function updateNoEventsMessage() {
-    console.log('updating no events msg')
+      console.log('updating no events msg')
       const msg = document.getElementById('no-events-msg');
       const section = document.getElementById('events-wrapper');
 
